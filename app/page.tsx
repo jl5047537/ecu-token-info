@@ -99,7 +99,7 @@ export default function Home() {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <span className="text-gray-700 font-medium">Jetton Master:</span>
-              <code className="flex-1 px-3 py-1 bg-gray-100 rounded border border-gray-300 text-sm text-gray-800 font-mono shadow-sm"
+              <code className="flex-1 px-3 py-1 bg-gray-100 rounded border border-gray-300 text-sm text-gray-800 font-mono shadow-sm">
                 {JETTON_MASTER}
               </code>
               <button
@@ -111,7 +111,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-3">
               <span className="text-gray-700 font-medium">Utility Contract:</span>
-              <code className="flex-1 px-3 py-1 bg-gray-100 rounded border border-gray-300 text-sm text-gray-800 font-mono shadow-sm"
+              <code className="flex-1 px-3 py-1 bg-gray-100 rounded border border-gray-300 text-sm text-gray-800 font-mono shadow-sm">
                 {UTILITY_CONTRACT}
               </code>
               <button
