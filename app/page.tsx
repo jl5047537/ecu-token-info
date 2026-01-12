@@ -22,7 +22,7 @@ export default function Home() {
     <main className="min-h-screen bg-gray-50 py-12 px-4">
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Block A — Hero */}
-        <section className="bg-white rounded-lg border border-gray-200 p-8">
+        <section className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-8">
           <div className="flex items-center gap-4 mb-2">
             <img 
               src="/logo.png" 
@@ -52,7 +52,7 @@ export default function Home() {
               href="https://tonviewer.com/EQAlFh-_a1UbCPz119-FzTTLw0RQvaDTCBU4sCafh_n64SYo"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+              className="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 hover:shadow-md transition-all duration-200"
             >
               Jetton Master (TON Viewer)
             </a>
@@ -60,7 +60,7 @@ export default function Home() {
               href="https://tonviewer.com/EQAohNdffFTjI2j4nYHsLIxp51cl23u37YS7IKwoT-md0WqZ"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+              className="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 hover:shadow-md transition-all duration-200"
             >
               Utility Contract (TON Viewer)
             </a>
@@ -68,7 +68,7 @@ export default function Home() {
               href="https://t.me/ecuton"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+              className="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 hover:shadow-md transition-all duration-200"
             >
               Telegram Updates
             </a>
@@ -76,7 +76,7 @@ export default function Home() {
         </section>
 
         {/* Block B — What is ECU */}
-        <section className="bg-white rounded-lg border border-gray-200 p-8">
+        <section className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-8">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             What is ECU
           </h2>
@@ -89,7 +89,7 @@ export default function Home() {
         </section>
 
         {/* Block C — Current on-chain utility */}
-        <section className="bg-white rounded-lg border border-gray-200 p-8">
+        <section className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-8">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             Current on-chain utility
           </h2>
@@ -99,24 +99,24 @@ export default function Home() {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <span className="text-gray-700 font-medium">Jetton Master:</span>
-              <code className="flex-1 px-3 py-1 bg-gray-100 rounded border border-gray-300 text-sm text-gray-800 font-mono">
+              <code className="flex-1 px-3 py-1 bg-gray-100 rounded border border-gray-300 text-sm text-gray-800 font-mono shadow-sm"
                 {JETTON_MASTER}
               </code>
               <button
                 onClick={() => copyToClipboard(JETTON_MASTER, 'jetton')}
-                className="px-3 py-1 text-sm bg-gray-200 hover:bg-gray-300 rounded transition-colors"
+                className="px-3 py-1 text-sm bg-gray-200 hover:bg-gray-300 hover:shadow-sm rounded transition-all duration-200"
               >
                 {copied === 'jetton' ? 'Copied!' : 'Copy'}
               </button>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-gray-700 font-medium">Utility Contract:</span>
-              <code className="flex-1 px-3 py-1 bg-gray-100 rounded border border-gray-300 text-sm text-gray-800 font-mono">
+              <code className="flex-1 px-3 py-1 bg-gray-100 rounded border border-gray-300 text-sm text-gray-800 font-mono shadow-sm"
                 {UTILITY_CONTRACT}
               </code>
               <button
                 onClick={() => copyToClipboard(UTILITY_CONTRACT, 'utility')}
-                className="px-3 py-1 text-sm bg-gray-200 hover:bg-gray-300 rounded transition-colors"
+                className="px-3 py-1 text-sm bg-gray-200 hover:bg-gray-300 hover:shadow-sm rounded transition-all duration-200"
               >
                 {copied === 'utility' ? 'Copied!' : 'Copy'}
               </button>
@@ -125,7 +125,7 @@ export default function Home() {
         </section>
 
         {/* Block D — Public development updates */}
-        <section className="bg-white rounded-lg border border-gray-200 p-8">
+        <section className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-8">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             Public development updates
           </h2>
@@ -143,7 +143,7 @@ export default function Home() {
         </section>
 
         {/* Block E — Project status */}
-        <section className="bg-white rounded-lg border border-gray-200 p-8">
+        <section className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-8">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             Project status
           </h2>
@@ -158,7 +158,7 @@ export default function Home() {
         </section>
 
         {/* Block F — Disclaimer */}
-        <section className="bg-white rounded-lg border border-gray-200 p-8">
+        <section className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-8">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             Disclaimer
           </h2>
