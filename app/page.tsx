@@ -36,6 +36,9 @@ export default function Home() {
             <p className="text-gray-600">
               The project is in an early operational phase with public development updates.
             </p>
+            <p className="text-gray-600">
+              Official references and on-chain links are provided below.
+            </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <a
@@ -70,23 +73,11 @@ export default function Home() {
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             What is ECU
           </h2>
-          <ul className="space-y-2 text-gray-700">
-            <li className="flex items-start">
-              <span className="mr-2">•</span>
-              <span>ECU is a jetton deployed on TON mainnet.</span>
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2">•</span>
-              <span>ECU is used as a utility settlement layer inside application workflows.</span>
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2">•</span>
-              <span>Usage is currently controlled and limited.</span>
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2">•</span>
-              <span>The project is under active development.</span>
-            </li>
+          <ul className="list-disc pl-5 space-y-2 text-gray-700">
+            <li>ECU is a jetton deployed on TON mainnet.</li>
+            <li>ECU is used as a utility settlement layer inside application workflows.</li>
+            <li>Usage is currently controlled and limited.</li>
+            <li>The project is under active development.</li>
           </ul>
         </section>
 
@@ -96,7 +87,7 @@ export default function Home() {
             Current on-chain utility
           </h2>
           <p className="text-gray-700 mb-6">
-            ECU is currently used with a utility smart contract that supports controlled token flows such as deposit and redemption. This stage focuses on system stability and predictable behavior before broader usage.
+            ECU is currently used with a utility smart contract that supports controlled token flows such as deposit and redemption. This stage focuses on system stability and predictable behavior before broader usage. These flows are used to validate system integration and operational reliability in real on-chain conditions.
           </p>
           <div className="space-y-3">
             <div className="flex items-center gap-3">
@@ -149,19 +140,10 @@ export default function Home() {
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             Project status
           </h2>
-          <ul className="space-y-2 text-gray-700 mb-4">
-            <li className="flex items-start">
-              <span className="mr-2">•</span>
-              <span>Status: Public development phase</span>
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2">•</span>
-              <span>Network: TON mainnet</span>
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2">•</span>
-              <span>Focus: stability, controlled usage, gradual rollout</span>
-            </li>
+          <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+            <li>Status: Public development phase</li>
+            <li>Network: TON mainnet</li>
+            <li>Focus: stability, controlled usage, gradual rollout</li>
           </ul>
           <p className="text-gray-600 italic mt-4">
             No timelines. No investment claims.
