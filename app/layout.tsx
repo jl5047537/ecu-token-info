@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: 'ECU is a utility settlement token on TON. On-chain references and public updates.',
   icons: {
     icon: '/favicon.png',
+    apple: '/favicon.png',
   },
 }
 
