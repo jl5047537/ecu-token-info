@@ -23,9 +23,16 @@ export default function Home() {
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Block A — Hero */}
         <section className="bg-white rounded-lg border border-gray-200 p-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            Electronic Coin Unit (ECU)
-          </h1>
+          <div className="flex items-center gap-4 mb-2">
+            <img 
+              src="/logo.png" 
+              alt="ECU Logo" 
+              className="w-16 h-16 object-contain"
+            />
+            <h1 className="text-4xl font-bold text-gray-900">
+              Electronic Coin Unit (ECU)
+            </h1>
+          </div>
           <p className="text-xl text-gray-700 mb-6">
             Utility settlement token on TON blockchain
           </p>
