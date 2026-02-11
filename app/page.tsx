@@ -107,7 +107,7 @@ export default function Home() {
             Last recorded utility contract interaction: Feb 2026
           </p>
           <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-6">
-            <li>Active holders: 20+</li>
+            <li>Active holders: 40+</li>
             <li>Ongoing deposit & redemption flows</li>
             <li>Contract status: active on TON mainnet</li>
           </ul>
