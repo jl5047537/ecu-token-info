@@ -97,7 +97,7 @@ export default function Home() {
             ECU is currently used with a utility smart contract that supports controlled token flows such as deposit and redemption. This stage focuses on system stability and predictable behavior before broader usage. These flows are used to validate system integration and operational reliability in real on-chain conditions.
           </p>
 
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-2">
             Latest On-Chain Activity
           </h2>
           <p className="text-lg text-gray-800 font-medium mb-1">
