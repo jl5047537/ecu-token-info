@@ -96,6 +96,22 @@ export default function Home() {
           <p className="text-gray-700 mb-6">
             ECU is currently used with a utility smart contract that supports controlled token flows such as deposit and redemption. This stage focuses on system stability and predictable behavior before broader usage. These flows are used to validate system integration and operational reliability in real on-chain conditions.
           </p>
+
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            Latest On-Chain Activity
+          </h3>
+          <p className="text-lg text-gray-800 font-medium mb-1">
+            Latest On-Chain Snapshot (Feb 2026)
+          </p>
+          <p className="text-gray-700 mb-3">
+            Last recorded utility contract interaction: Feb 2026
+          </p>
+          <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-6">
+            <li>Active holders: 20+</li>
+            <li>Ongoing deposit & redemption flows</li>
+            <li>Contract status: active on TON mainnet</li>
+          </ul>
+
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <span className="text-gray-700 font-medium">Jetton Master:</span>
