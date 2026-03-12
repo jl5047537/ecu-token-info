@@ -5,6 +5,7 @@ import Image from 'next/image'
 
 const JETTON_MASTER = 'EQAlFh-_a1UbCPz119-FzTTLw0RQvaDTCBU4sCafh_n64SYo'
 const UTILITY_CONTRACT = 'EQAohNdffFTjI2j4nYHsLIxp51cl23u37YS7IKwoT-md0WqZ'
+const TREASURY_WALLET = 'UQBNw7jyLAhxt-m9CJLc9XZoMdo0J6OjxKN9h8tGAZvJqEsL'
 const TONVIEWER_BASE = 'https://tonviewer.com'
 const TELEGRAM_URL = 'https://t.me/ecuton'
 
@@ -127,7 +128,7 @@ function Content() {
           <section id="contracts" className="scroll-mt-24">
             <h2 className="text-2xl font-semibold text-white mb-2">{t.contracts.title}</h2>
             <p className="text-slate-400 mb-8">{t.contracts.description}</p>
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-slate-900/50 border border-slate-800/50 rounded-xl p-6 hover:border-cyan-500/30 transition-colors">
                 <h3 className="text-lg font-medium text-white mb-3">{t.contracts.jetton.title}</h3>
                 <p className="text-slate-400 text-sm mb-4">{t.contracts.jetton.text}</p>
@@ -150,6 +151,18 @@ function Content() {
                   className="inline-block px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white text-sm rounded-lg transition-colors"
                 >
                   {t.contracts.utility.button}
+                </a>
+              </div>
+              <div className="bg-slate-900/50 border border-slate-800/50 rounded-xl p-6 hover:border-cyan-500/30 transition-colors">
+                <h3 className="text-lg font-medium text-white mb-3">{t.contracts.treasury.title}</h3>
+                <p className="text-slate-400 text-sm mb-4">{t.contracts.treasury.text}</p>
+                <a
+                  href={`${TONVIEWER_BASE}/${TREASURY_WALLET}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white text-sm rounded-lg transition-colors"
+                >
+                  {t.contracts.treasury.button}
                 </a>
               </div>
             </div>
@@ -192,7 +205,7 @@ function Content() {
             <p className="text-white font-medium">{t.footer.title}</p>
             <p className="text-slate-400 text-sm mt-1">{t.footer.mainnet}</p>
             <p className="text-slate-500 text-xs mt-0.5">{t.footer.tonMainnet}</p>
-            <div className="flex gap-6 justify-center mt-6">
+            <div className="flex flex-wrap gap-6 justify-center mt-6">
               <a
                 href={`${TONVIEWER_BASE}/${JETTON_MASTER}`}
                 target="_blank"
@@ -208,6 +221,14 @@ function Content() {
                 className="text-slate-400 hover:text-cyan-400 text-sm transition-colors"
               >
                 Utility Contract
+              </a>
+              <a
+                href={`${TONVIEWER_BASE}/${TREASURY_WALLET}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-cyan-400 text-sm transition-colors"
+              >
+                ECU Treasury Wallet
               </a>
               <a
                 href={TELEGRAM_URL}

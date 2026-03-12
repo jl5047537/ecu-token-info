@@ -39,6 +39,11 @@ export const translations = {
         text: 'ECU Protocol contract that executes protocol operations and interacts with protocol smart contracts.',
         button: 'View on Tonviewer',
       },
+      treasury: {
+        title: 'ECU Treasury Wallet',
+        text: 'ECU Treasury Wallet — project wallet for storing and distributing ECU.',
+        button: 'View on Tonviewer',
+      },
     },
     transparency: {
       title: 'System transparency',
@@ -98,6 +103,11 @@ export const translations = {
       utility: {
         title: 'Utility Contract',
         text: 'Контракт протокола ECU, обеспечивающий выполнение операций протокола и взаимодействие со смарт-контрактами протокола.',
+        button: 'View on Tonviewer',
+      },
+      treasury: {
+        title: 'ECU Treasury Wallet',
+        text: 'ECU Treasury Wallet — кошелёк проекта для хранения и распределения ECU.',
         button: 'View on Tonviewer',
       },
     },
