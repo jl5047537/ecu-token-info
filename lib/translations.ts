@@ -61,7 +61,6 @@ export const translations = {
     footer: {
       title: 'ECU Protocol',
       mainnet: 'Running on TON Mainnet',
-      tonMainnet: 'TON Mainnet',
     },
     disclaimer: {
       text: 'The information on this site is provided for informational purposes only. ECU is a utility token used within the ECU Protocol for smart contract operations. The token does not constitute an investment instrument and does not provide financial guarantees.',
@@ -127,7 +126,6 @@ export const translations = {
     footer: {
       title: 'ECU Protocol',
       mainnet: 'Running on TON Mainnet',
-      tonMainnet: 'TON Mainnet',
     },
     disclaimer: {
       text: 'Информация на данном сайте предоставлена исключительно в информационных целях. ECU является utility-токеном, используемым внутри протокола ECU для выполнения операций смарт-контрактов. Токен не представляет собой инвестиционный инструмент и не предоставляет финансовых гарантий.',

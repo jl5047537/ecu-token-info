@@ -204,7 +204,6 @@ function Content() {
           <footer className="border-t border-slate-800 pt-12 text-center">
             <p className="text-white font-medium">{t.footer.title}</p>
             <p className="text-slate-400 text-sm mt-1">{t.footer.mainnet}</p>
-            <p className="text-slate-500 text-xs mt-0.5">{t.footer.tonMainnet}</p>
             <div className="flex flex-wrap gap-6 justify-center mt-6">
               <a
                 href={`${TONVIEWER_BASE}/${JETTON_MASTER}`}
