@@ -1,189 +1,237 @@
 'use client'
 
-import { useState } from 'react'
+import { LanguageProvider, useLanguage } from '@/lib/LanguageContext'
+import Image from 'next/image'
 
 const JETTON_MASTER = 'EQAlFh-_a1UbCPz119-FzTTLw0RQvaDTCBU4sCafh_n64SYo'
 const UTILITY_CONTRACT = 'EQAohNdffFTjI2j4nYHsLIxp51cl23u37YS7IKwoT-md0WqZ'
+const TONVIEWER_BASE = 'https://tonviewer.com'
+const TELEGRAM_URL = 'https://t.me/ecuton'
 
-export default function Home() {
-  const [copied, setCopied] = useState<string | null>(null)
-
-  const copyToClipboard = async (text: string, id: string) => {
-    try {
-      await navigator.clipboard.writeText(text)
-      setCopied(id)
-      setTimeout(() => setCopied(null), 2000)
-    } catch (err) {
-      console.error('Failed to copy:', err)
-    }
-  }
-
+function LangSwitcher() {
+  const { lang, setLang } = useLanguage()
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-4">
-      <div className="max-w-4xl mx-auto space-y-8">
-        {/* Block A — Hero */}
-        <section className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-8">
-          <div className="flex items-center gap-4 mb-2">
-            <img 
-              src="/logo.png" 
-              alt="ECU Logo" 
-              className="w-16 h-16 object-contain"
-            />
-            <h1 className="text-4xl font-bold text-gray-900">
-              Electronic Coin Unit (ECU)
-            </h1>
-          </div>
-          <p className="text-xl text-gray-700 mb-6">
-            Utility settlement token on TON blockchain
-          </p>
-          <div className="space-y-3 mb-6">
-            <p className="text-gray-600">
-              ECU is an experimental utility token used for controlled on-chain workflows.
-            </p>
-            <p className="text-gray-600">
-              The project is in an early operational phase with public development updates.
-            </p>
-            <p className="text-gray-600">
-              Official references and on-chain links are provided below.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <a
-              href="https://tonviewer.com/EQAlFh-_a1UbCPz119-FzTTLw0RQvaDTCBU4sCafh_n64SYo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 hover:shadow-md transition-all duration-200"
-            >
-              Jetton Master (TON Viewer)
-            </a>
-            <a
-              href="https://tonviewer.com/EQAohNdffFTjI2j4nYHsLIxp51cl23u37YS7IKwoT-md0WqZ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 hover:shadow-md transition-all duration-200"
-            >
-              Utility Contract (TON Viewer)
-            </a>
-            <a
-              href="https://t.me/ecuton"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 hover:shadow-md transition-all duration-200"
-            >
-              Telegram Updates
-            </a>
-          </div>
-        </section>
-
-        {/* Block B — What is ECU */}
-        <section className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            What is ECU
-          </h2>
-          <ul className="list-disc pl-5 space-y-2 text-gray-700">
-            <li>ECU is a jetton deployed on TON mainnet.</li>
-            <li>ECU is used as a utility settlement layer inside application workflows.</li>
-            <li>Usage is currently controlled and limited.</li>
-            <li>The project is under active development.</li>
-          </ul>
-        </section>
-
-        {/* Block C — Current on-chain utility */}
-        <section className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Current on-chain utility
-          </h2>
-          <p className="text-gray-700 mb-6">
-            ECU is currently used with a utility smart contract that supports controlled token flows such as deposit and redemption. This stage focuses on system stability and predictable behavior before broader usage. These flows are used to validate system integration and operational reliability in real on-chain conditions.
-          </p>
-
-          <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-            Latest On-Chain Activity
-          </h2>
-          <p className="text-lg text-gray-800 font-medium mb-1">
-            Latest On-Chain Snapshot (Feb 2026)
-          </p>
-          <p className="text-gray-700 mb-3">
-            Last recorded utility contract interaction: Feb 2026
-          </p>
-          <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-6">
-            <li>Active holders: 40+</li>
-            <li>Ongoing deposit & redemption flows</li>
-            <li>Contract status: active on TON mainnet</li>
-          </ul>
-
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <span className="text-gray-700 font-medium">Jetton Master:</span>
-              <code className="flex-1 px-3 py-1 bg-gray-100 rounded border border-gray-300 text-sm text-gray-800 font-mono shadow-sm">
-                {JETTON_MASTER}
-              </code>
-              <button
-                onClick={() => copyToClipboard(JETTON_MASTER, 'jetton')}
-                className="px-3 py-1 text-sm bg-gray-200 hover:bg-gray-300 hover:shadow-sm rounded transition-all duration-200"
-              >
-                {copied === 'jetton' ? 'Copied!' : 'Copy'}
-              </button>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="text-gray-700 font-medium">Utility Contract:</span>
-              <code className="flex-1 px-3 py-1 bg-gray-100 rounded border border-gray-300 text-sm text-gray-800 font-mono shadow-sm">
-                {UTILITY_CONTRACT}
-              </code>
-              <button
-                onClick={() => copyToClipboard(UTILITY_CONTRACT, 'utility')}
-                className="px-3 py-1 text-sm bg-gray-200 hover:bg-gray-300 hover:shadow-sm rounded transition-all duration-200"
-              >
-                {copied === 'utility' ? 'Copied!' : 'Copy'}
-              </button>
-            </div>
-          </div>
-        </section>
-
-        {/* Block D — Public development updates */}
-        <section className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Public development updates
-          </h2>
-          <p className="text-gray-700 mb-4">
-            Public progress, on-chain activity and status updates are published on Telegram.
-          </p>
-          <a
-            href="https://t.me/ecuton"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-          >
-            Open Telegram channel
-          </a>
-        </section>
-
-        {/* Block E — Project status */}
-        <section className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Project status
-          </h2>
-          <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-            <li>Status: Public development phase</li>
-            <li>Network: TON mainnet</li>
-            <li>Focus: stability, controlled usage, gradual rollout</li>
-          </ul>
-          <p className="text-gray-600 italic mt-4">
-            No timelines. No investment claims.
-          </p>
-        </section>
-
-        {/* Block F — Disclaimer */}
-        <section className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Disclaimer
-          </h2>
-          <p className="text-gray-700">
-            ECU is an experimental utility token under active development. This website is informational and does not constitute financial advice or an investment offer.
-          </p>
-        </section>
-      </div>
-    </main>
+    <div className="flex gap-1 text-sm text-slate-400">
+      <button
+        onClick={() => setLang('en')}
+        className={`px-2 py-1 rounded transition-colors ${
+          lang === 'en' ? 'text-cyan-400 font-medium' : 'hover:text-slate-300'
+        }`}
+      >
+        EN
+      </button>
+      <span className="text-slate-600">|</span>
+      <button
+        onClick={() => setLang('ru')}
+        className={`px-2 py-1 rounded transition-colors ${
+          lang === 'ru' ? 'text-cyan-400 font-medium' : 'hover:text-slate-300'
+        }`}
+      >
+        RU
+      </button>
+    </div>
   )
 }
 
+function Content() {
+  const { t } = useLanguage()
+
+  return (
+    <>
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-slate-800/50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
+          <a href="#" className="text-xl font-semibold text-white hover:text-cyan-400 transition-colors shrink-0">
+            ECU Protocol
+          </a>
+          <nav className="flex items-center gap-4 sm:gap-6 flex-wrap justify-end">
+            <a href="#about" className="text-slate-400 hover:text-white transition-colors text-sm">
+              {t.nav.about}
+            </a>
+            <a href="#protocol" className="text-slate-400 hover:text-white transition-colors text-sm">
+              {t.nav.protocol}
+            </a>
+            <a href="#contracts" className="text-slate-400 hover:text-white transition-colors text-sm">
+              {t.nav.contracts}
+            </a>
+            <a href="#community" className="text-slate-400 hover:text-white transition-colors text-sm">
+              {t.nav.community}
+            </a>
+            <LangSwitcher />
+          </nav>
+        </div>
+      </header>
+
+      <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 pt-24 pb-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-24">
+          {/* Hero */}
+          <section className="text-center">
+            <div className="flex justify-center mb-4">
+              <Image src="/logo.png" alt="ECU" width={64} height={64} className="opacity-90" />
+            </div>
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-3 tracking-tight">
+              {t.hero.title}
+            </h1>
+            <p className="text-xl text-slate-400 mb-1">{t.hero.subtitle}</p>
+            <p className="text-sm text-cyan-500/90 font-medium mb-8">{t.hero.mainnet}</p>
+            <p className="text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+              {t.hero.text}
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <a
+                href={`${TONVIEWER_BASE}/${JETTON_MASTER}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-medium rounded-lg transition-colors"
+              >
+                {t.hero.jettonMaster}
+              </a>
+              <a
+                href={`${TONVIEWER_BASE}/${UTILITY_CONTRACT}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-medium rounded-lg transition-colors"
+              >
+                {t.hero.utilityContract}
+              </a>
+              <a
+                href={TELEGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 bg-slate-700 hover:bg-slate-600 text-white text-sm font-medium rounded-lg transition-colors"
+              >
+                {t.hero.telegram}
+              </a>
+            </div>
+          </section>
+
+          {/* About */}
+          <section id="about" className="scroll-mt-24">
+            <div className="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8 hover:border-slate-700/50 hover:border-l-2 hover:border-l-cyan-500/50 transition-all duration-300">
+              <h2 className="text-2xl font-semibold text-white mb-4">{t.about.title}</h2>
+              <p className="text-slate-300 leading-relaxed">{t.about.text}</p>
+            </div>
+          </section>
+
+          {/* Protocol */}
+          <section id="protocol" className="scroll-mt-24">
+            <div className="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8 hover:border-slate-700/50 hover:border-l-2 hover:border-l-cyan-500/50 transition-all duration-300">
+              <h2 className="text-2xl font-semibold text-white mb-4">{t.protocol.title}</h2>
+              <p className="text-slate-300 leading-relaxed">{t.protocol.text}</p>
+            </div>
+          </section>
+
+          {/* Contracts */}
+          <section id="contracts" className="scroll-mt-24">
+            <h2 className="text-2xl font-semibold text-white mb-2">{t.contracts.title}</h2>
+            <p className="text-slate-400 mb-8">{t.contracts.description}</p>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="bg-slate-900/50 border border-slate-800/50 rounded-xl p-6 hover:border-cyan-500/30 transition-colors">
+                <h3 className="text-lg font-medium text-white mb-3">{t.contracts.jetton.title}</h3>
+                <p className="text-slate-400 text-sm mb-4">{t.contracts.jetton.text}</p>
+                <a
+                  href={`${TONVIEWER_BASE}/${JETTON_MASTER}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white text-sm rounded-lg transition-colors"
+                >
+                  {t.contracts.jetton.button}
+                </a>
+              </div>
+              <div className="bg-slate-900/50 border border-slate-800/50 rounded-xl p-6 hover:border-cyan-500/30 transition-colors">
+                <h3 className="text-lg font-medium text-white mb-3">{t.contracts.utility.title}</h3>
+                <p className="text-slate-400 text-sm mb-4">{t.contracts.utility.text}</p>
+                <a
+                  href={`${TONVIEWER_BASE}/${UTILITY_CONTRACT}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white text-sm rounded-lg transition-colors"
+                >
+                  {t.contracts.utility.button}
+                </a>
+              </div>
+            </div>
+          </section>
+
+          {/* Transparency */}
+          <section className="scroll-mt-24">
+            <div className="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8 hover:border-slate-700/50 hover:border-l-2 hover:border-l-cyan-500/50 transition-all duration-300">
+              <h2 className="text-2xl font-semibold text-white mb-4">{t.transparency.title}</h2>
+              <p className="text-slate-300 leading-relaxed">{t.transparency.text}</p>
+            </div>
+          </section>
+
+          {/* Why TON */}
+          <section className="scroll-mt-24">
+            <div className="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8 hover:border-slate-700/50 hover:border-l-2 hover:border-l-cyan-500/50 transition-all duration-300">
+              <h2 className="text-2xl font-semibold text-white mb-4">{t.whyTon.title}</h2>
+              <p className="text-slate-300 leading-relaxed">{t.whyTon.text}</p>
+            </div>
+          </section>
+
+          {/* Community */}
+          <section id="community" className="scroll-mt-24">
+            <div className="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8 text-center hover:border-slate-700/50 hover:border-l-2 hover:border-l-cyan-500/50 transition-all duration-300">
+              <h2 className="text-2xl font-semibold text-white mb-4">{t.community.title}</h2>
+              <p className="text-slate-300 mb-6">{t.community.text}</p>
+              <a
+                href={TELEGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-2.5 bg-cyan-600 hover:bg-cyan-500 text-white font-medium rounded-lg transition-colors"
+              >
+                {t.community.button}
+              </a>
+            </div>
+          </section>
+
+          {/* Footer */}
+          <footer className="border-t border-slate-800 pt-12 text-center">
+            <p className="text-white font-medium">{t.footer.title}</p>
+            <p className="text-slate-400 text-sm mt-1">{t.footer.mainnet}</p>
+            <p className="text-slate-500 text-xs mt-0.5">{t.footer.tonMainnet}</p>
+            <div className="flex gap-6 justify-center mt-6">
+              <a
+                href={`${TONVIEWER_BASE}/${JETTON_MASTER}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-cyan-400 text-sm transition-colors"
+              >
+                Jetton Master
+              </a>
+              <a
+                href={`${TONVIEWER_BASE}/${UTILITY_CONTRACT}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-cyan-400 text-sm transition-colors"
+              >
+                Utility Contract
+              </a>
+              <a
+                href={TELEGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-cyan-400 text-sm transition-colors"
+              >
+                Telegram
+              </a>
+            </div>
+          </footer>
+
+          {/* Disclaimer */}
+          <section className="bg-slate-900/30 border border-slate-800/30 rounded-xl p-6">
+            <p className="text-slate-500 text-sm leading-relaxed">{t.disclaimer.text}</p>
+          </section>
+        </div>
+      </main>
+    </>
+  )
+}
+
+export default function Home() {
+  return (
+    <LanguageProvider>
+      <Content />
+    </LanguageProvider>
+  )
+}
