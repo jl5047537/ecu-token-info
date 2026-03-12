@@ -76,6 +76,8 @@ function Content() {
             <p className="text-sm text-cyan-500/90 font-medium mb-8">{t.hero.mainnet}</p>
             <p className="text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
               {t.hero.text}
+              <br />
+              {t.hero.disclaimer}
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a
